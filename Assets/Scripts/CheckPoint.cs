@@ -9,6 +9,8 @@ public class CheckPoint : MonoBehaviour
     public Text LocName;
     public GameObject LocationPanel;
     public GameObject TravelPanel;
+    public GameObject HealthBarUI;
+    public GameObject Inv;
 
     // Start is called before the first frame update
     void Start()
@@ -22,21 +24,42 @@ public class CheckPoint : MonoBehaviour
         
     }
 
+    public void CheckPointWindowOpen()
+    {
+        LocationPanel.SetActive(true);
+        LocName.text = LocationName;
+        Inv.SetActive(false);
+    }
+
     public void TravelButton()
     {
-        TravelPanel.gameObject.SetActive(true);
-        LocationPanel.gameObject.SetActive(false);
+        TravelPanel.SetActive(true);
+        LocationPanel.SetActive(false);
     }
 
     public void TravelPanelClose()
     {
-        TravelPanel.gameObject.SetActive(false);
-        LocationPanel.gameObject.SetActive(true);
+        TravelPanel.SetActive(false);
+        LocationPanel.SetActive(true);
     }
 
 
     public void Close()
     {
-        LocationPanel.gameObject.SetActive(false);
+        LocationPanel.SetActive(false);
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckPointWindowOpen();
+            }
+
+        }
+        else
+            Close();
     }
 }

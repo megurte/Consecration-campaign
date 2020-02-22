@@ -31,29 +31,19 @@ public class NPC : MonoBehaviour
         //    Death();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        
+        if (collision.CompareTag("Player"))
         {
-            //if (Input.GetKeyDown(KeyCode.F))
-            //{
-            //}
-            DialogeNPC.GetComponent<DialogNPC>().ShowDialog();
-
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            DialogeNPC.GetComponent<DialogNPC>().ShowDialog();
-
+            if (Input.GetKeyDown(KeyCode.E))
+                DialogeNPC.GetComponent<DialogueNPC>().ShowDialogue();          
+           
         }
         else
         {
-            DialogeNPC.GetComponent<DialogNPC>().UnShowDialog();
-
+            DialogeNPC.GetComponent<DialogueNPC>().UnShowDialogue();
         }
     }
 }
