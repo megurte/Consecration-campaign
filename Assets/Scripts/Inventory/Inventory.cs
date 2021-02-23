@@ -43,15 +43,12 @@ public class Inventory : MonoBehaviour
         UpdateInventory();
     }
 
-
     public void Update()
     {
         if (Currentid != -1 || Currentid != 0)
         {
             MovingObject();
-        }
-
-        
+        }     
       
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -73,9 +70,7 @@ public class Inventory : MonoBehaviour
                 items[i].ItemgameObject.GetComponentInChildren<Text>().text = "";
 
             items[i].ItemgameObject.GetComponent<Image>().sprite = dataBase.items[items[i].id].spriteNeutral;
-        }
-
-        
+        }      
     }
 
     public void SearchForSameItem(Item item, int count)
@@ -181,9 +176,7 @@ public class Inventory : MonoBehaviour
                 Currentid = -1;
 
                 movingobject.gameObject.SetActive(false);
-            }
-        
-        
+            }        
     }
 
     public InventoryItem CopyInventoryItem(InventoryItem old)
@@ -199,8 +192,7 @@ public class Inventory : MonoBehaviour
     {
             Vector3 pos = Input.mousePosition + offset;
             pos.z = InventoryMainObject.GetComponent<RectTransform>().position.z;
-            movingobject.position = cam.ScreenToWorldPoint(pos);
-        
+            movingobject.position = cam.ScreenToWorldPoint(pos);       
     }
 
     public void MoveToolTip()

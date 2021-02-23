@@ -82,6 +82,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -151,7 +152,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 4
 --- !u!114 &2194312430667150786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ MonoBehaviour:
   e_speed: 1
   e_body2d: {fileID: 2000832391}
   attackRate: 2
-  maxHealth: 60
+  maxHealth: 100
   Damage: 40
   attackrange: 1
   PlayerLayers:
@@ -176,6 +177,7 @@ MonoBehaviour:
     m_Bits: 256
   AttackCollider: {fileID: 8628954765462890521}
   AttackPoint: {fileID: 7076976397734715805}
+  groudcollider: {fileID: 6899767837393575199}
 --- !u!1 &1399940313370769592
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,13 +250,13 @@ GameObject:
   - component: {fileID: 2624998196348317977}
   - component: {fileID: 9028487216314671450}
   - component: {fileID: 99008402874466197}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GroundSensor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2624998196348317977
 Transform:
   m_ObjectHideFlags: 0
@@ -294,7 +296,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0012733489, y: 0.04434693}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -305,7 +307,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.03}
+  m_Size: {x: 0.12705483, y: 0.037604436}
   m_EdgeRadius: 0
 --- !u!1 &7076976397734715805
 GameObject:

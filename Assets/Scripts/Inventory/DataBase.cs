@@ -11,7 +11,6 @@ public class DataBase : MonoBehaviour
 }
 
 
-
 public enum ItemType { MATERIAL, HEALTH, WEAPON, KEY, QSTITEM, SPECIAL };
 public enum Quality { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
 
@@ -109,7 +108,7 @@ public class Item
                 color = "GREEN";
                 break;
             case Quality.RARE:
-                color = "red";
+                color = "blue";
                 break;
             case Quality.EPIC:
                 color = "TEAL";
